@@ -1,6 +1,5 @@
 import React from "react";
 import { render, screen, waitFor } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 import PatientGetter from "./patient-search.component";
 
 it("It renders the search patient field", async () => {

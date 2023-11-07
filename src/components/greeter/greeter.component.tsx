@@ -14,7 +14,7 @@ const Greeter: React.FC<{ patients: PatientsType[]}> = ({ patients }) => {
   if(!patients.length) {
     return <Grid fullWidth>
       <Column lg={5}>
-        <Tile data-testid="needs-to-search-a-patient"><Trans>You need to search a patient first</Trans></Tile>
+        <Tile data-testid="needs-to-search-a-patient"><Trans>Search an existing patient</Trans></Tile>
       </Column>
     </Grid>
   }

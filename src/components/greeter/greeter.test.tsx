@@ -28,7 +28,7 @@ describe("Greeter Component", () => {
 
     const message = screen.getByTestId("needs-to-search-a-patient");
     expect(message).toBeInTheDocument();
-    expect(message).toHaveTextContent("You need to search a patient first");
+    expect(message).toHaveTextContent("Search an existing patient");
   });
 
   it("renders greetings and patient information when patients are provided", () => {
