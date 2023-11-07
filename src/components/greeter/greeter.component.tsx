@@ -1,27 +1,31 @@
 import React from "react";
-import {Column, Grid, Search, Tile} from "@carbon/react";
-import { Trans, useTranslation } from "react-i18next";
-import { useConfig } from "@openmrs/esm-framework";
-import { age } from "@openmrs/esm-framework";
+import { Column, Grid, Tile } from "@carbon/react";
+import { Trans } from "react-i18next";
+import { useConfig, age } from "@openmrs/esm-framework";
 import { Config } from "../../config-schema";
 import styles from "./greeter.scss";
-import {PatientsType} from "../../utils/use-patients";
+import { PatientsType } from "../../utils/use-patients";
 
-const Greeter: React.FC<{ patients: PatientsType[]}> = ({ patients }) => {
-  const { t } = useTranslation();
+const Greeter: React.FC<{ patients: PatientsType[] }> = ({ patients }) => {
   const config: Config = useConfig();
 
-  if(!patients.length) {
-    return <Grid fullWidth>
-      <Column lg={5}>
-        <Tile data-testid="needs-to-search-a-patient"><Trans>Search an existing patient</Trans></Tile>
-      </Column>
-    </Grid>
+  if (!patients.length) {
+    return (
+      <Grid fullWidth>
+        <Column lg={5}>
+          <Tile data-testid="needs-to-search-a-patient">
+            <Trans>Search an existing patient</Trans>
+          </Tile>
+        </Column>
+      </Grid>
+    );
   }
   return (
     <Grid fullWidth>
-      {patients.map(patient => {
-        config.whoToGreet = [`${patient.resource.name[0].given} ${patient.resource.name[0].family}`]
+      {patients.map((patient) => {
+        config.whoToGreet = [
+          `${patient.resource.name[0].given} ${patient.resource.name[0].family}`,
+        ];
         return (
           <Column lg={10} key={patient.resource.id}>
             <Tile className={styles.tile}>
@@ -30,10 +34,11 @@ const Greeter: React.FC<{ patients: PatientsType[]}> = ({ patients }) => {
               ) : (
                 <Trans key="formalGreeting">hello</Trans>
               )}{" "}
-              {config.whoToGreet.join(", ")}! You are currently {age(patient.resource.birthDate)} years old!
+              {config.whoToGreet.join(", ")}! You are currently{" "}
+              {age(patient.resource.birthDate)} years old!
             </Tile>
           </Column>
-        )
+        );
       })}
     </Grid>
   );

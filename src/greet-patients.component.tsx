@@ -1,15 +1,13 @@
-import React, {useState} from "react";
-import { useTranslation } from "react-i18next";
+import React, { useState } from "react";
 import Greeter from "./components/greeter/greeter.component";
 import PatientGetter from "./components/patient-search/patient-search.component";
 import styles from "./greet-patient.scss";
-import {useDebounce} from "@openmrs/esm-framework";
-import { usePatients} from "./utils/use-patients";
+import { useDebounce } from "@openmrs/esm-framework";
+import { usePatients } from "./utils/use-patients";
 
 const GreetPatientsPage: React.FC = () => {
-  const { t } = useTranslation();
-  const [patientName, setPatientName] = useState<string>("")
-  const debouncePatientName = useDebounce(patientName)
+  const [patientName, setPatientName] = useState<string>("");
+  const debouncePatientName = useDebounce(patientName);
   const { patients, isLoading } = usePatients(debouncePatientName);
 
   return (
@@ -17,7 +15,7 @@ const GreetPatientsPage: React.FC = () => {
       <PatientGetter
         isLoading={isLoading}
         handlePatientSearch={(name: string) => {
-          setPatientName(name)
+          setPatientName(name);
         }}
       />
       <Greeter patients={patients || []} />

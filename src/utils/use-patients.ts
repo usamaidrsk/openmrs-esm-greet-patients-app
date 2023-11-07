@@ -1,7 +1,7 @@
 import useSWR from "swr";
 import { fhirBaseUrl, openmrsFetch } from "@openmrs/esm-framework";
 
-export type PatientsType =  {resource: fhir.Patient}
+export type PatientsType = { resource: fhir.Patient };
 export function usePatients(query: string) {
   const url = `${fhirBaseUrl}/Patient?name=${query}&_summary=data`;
   const { data, error, isLoading } = useSWR<

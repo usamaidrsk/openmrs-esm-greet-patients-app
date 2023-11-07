@@ -28,4 +28,3 @@ export const greetPatientsLink = getAsyncLifecycle(
   () => import("./components/greet-patients-link"),
   options
 );
-
