@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Greeter from "./greeter.component";
-import {PatientsType} from "../../utils/use-patients";
+import {PatientType} from "../../utils/use-patients";
 import {Config} from "../../config-schema";
 import {useConfig} from "@openmrs/esm-framework";
 
@@ -32,7 +32,7 @@ describe("Greeter Component", () => {
   });
 
   it("renders greetings and patient information when patients are provided", () => {
-    render(<Greeter patients={mockPatients as unknown as PatientsType[]} />);
+    render(<Greeter patients={mockPatients as unknown as PatientType[]} />);
 
     const greetingTextRegex = /hello\s+Joeboy Testguy!\s+You are currently\s+26 yrs\s+years old!/;
 
@@ -44,7 +44,7 @@ describe("Greeter Component", () => {
     const config: Config = { casualGreeting: true, whoToGreet: ["Joeboy Testguy"] };
     mockUseConfig.mockReturnValue(config);
 
-    render(<Greeter patients={mockPatients as unknown as PatientsType[]} />);
+    render(<Greeter patients={mockPatients as unknown as PatientType[]} />);
 
     const greetingTextRegex = /hey\s+Joeboy Testguy!\s+You are currently\s+26 yrs\s+years old!/;
 

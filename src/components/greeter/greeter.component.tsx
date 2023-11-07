@@ -4,9 +4,9 @@ import { Trans } from "react-i18next";
 import { useConfig, age } from "@openmrs/esm-framework";
 import { Config } from "../../config-schema";
 import styles from "./greeter.scss";
-import { PatientsType } from "../../utils/use-patients";
+import { PatientType } from "../../utils/use-patients";
 
-const Greeter: React.FC<{ patients: PatientsType[] }> = ({ patients }) => {
+const Greeter: React.FC<{ patients: PatientType[] }> = ({ patients }) => {
   const config: Config = useConfig();
 
   if (!patients.length) {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Greeter from "./components/greeter/greeter.component";
 import PatientGetter from "./components/patient-search/patient-search.component";
-import styles from "./greet-patient.scss";
+import styles from "./greet-patients.scss";
 import { useDebounce } from "@openmrs/esm-framework";
 import { usePatients } from "./utils/use-patients";
 
