@@ -1,0 +1,10 @@
+@use '../../../node_modules/@carbon/styles/scss/spacing';
+@use '../../../node_modules/@carbon/styles/scss/type';
+
+.container {
+  margin-top: spacing.$spacing-09;
+
+  > * + * {
+    margin-top: spacing.$spacing-06;
+  }
+}

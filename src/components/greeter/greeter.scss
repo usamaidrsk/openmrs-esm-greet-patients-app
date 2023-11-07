@@ -1,0 +1,12 @@
+@use '../../../node_modules/@carbon/styles/scss/spacing';
+@use '../../../node_modules/@carbon/styles/scss/type';
+
+.greeting {
+  text-transform: capitalize;
+}
+
+.tile {
+  border: 1px solid lightgray;
+  margin-top: spacing.$spacing-02;
+  @include type.type-style('heading-compact-01');
+}

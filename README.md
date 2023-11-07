@@ -1,6 +1,6 @@
-![Node.js CI](https://github.com/openmrs/openmrs-esm-template-app/workflows/Node.js%20CI/badge.svg)
+![Node.js CI](https://github.com/openmrs/openmrs-esm-greet-patients-app/workflows/Node.js%20CI/badge.svg)
 
-# OpenMRS ESM Template App
+# OpenMRS ESM greet-patients App
 
 This repository provides a starting point for creating your own
 [OpenMRS Microfrontend](https://wiki.openmrs.org/display/projects/OpenMRS+3.0%3A+A+Frontend+Framework+that+enables+collaboration+and+better+User+Experience).
@@ -22,16 +22,16 @@ should open with the OpenMRS 3 application. Log in and then navigate to `/openmr
 
 ## Adapting the code
 
-1. Start by finding and replacing all instances of "template" with the name
+1. Start by finding and replacing all instances of "greet-patients" with the name
   of your microfrontend.
 2. Update `index.ts` as appropriate, at least changing the feature name and the page name and route.
 3. Rename the `root.*` family of files to have the name of your first page.
 4. Delete the contents of the objects in `config-schema`. Start filling them back in once you have a clear idea what will need to be configured.
-5. Delete the `greeter` and `patient-getter` directories, and the contents of `root.component.tsx`.
+5. Delete the `greeter` and `patient-getter` directories, and the contents of `greet-patients.component.tsx`.
 6. Delete the contents of `translations/en.json`.
 7. Open up `.github/workflows` and adapt it to your needs. If you're writing
  a microfrontend that will be managed by the community, you might be able to
-  just replace all instances of `template` with your microfrontend's name.
+  just replace all instances of `greet-patients` with your microfrontend's name.
   However, if you're writing a microfrontend for a specific organization or
   implementation, you will probably need to configure GitHub Actions differently.
 8. Delete the contents of this README and write a short explanation of what
@@ -39,7 +39,7 @@ should open with the OpenMRS 3 application. Log in and then navigate to `/openmr
 
 At this point, you should be able to write your first page as a React application.
 
-Check out the [Medication dispensing app](https://github.com/openmrs/openmrs-esm-dispensing-app) for an example of a non-trivial app built using the Template.
+Check out the [Medication dispensing app](https://github.com/openmrs/openmrs-esm-dispensing-app) for an example of a non-trivial app built using the greet-patients.
 
 ## Integrating it into your application
 
