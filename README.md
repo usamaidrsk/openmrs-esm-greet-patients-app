@@ -1,4 +1,4 @@
-~~![Node.js CI](https://github.com/openmrs/openmrs-esm-greet-patients-app/workflows/Node.js%20CI/badge.svg)
+![Node.js CI](https://github.com/openmrs/openmrs-esm-dispensing-app/workflows/Node.js%20CI/badge.svg)
 
 # OpenMRS ESM Greet Patients App
 
